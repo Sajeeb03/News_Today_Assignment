@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsTodayBlogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .overflow {
+            overflow-y: scroll;
+        }
+    </style>
+
+</head>
+
+<body class="w-3/4 m-auto">
+    <header>
+        <h1 class="text-5xl text-orange-500 font-bold text-center my-5">Welcome to my Blog</h1>
+    </header>
+    <main>
+        <div>
+            <div class="collapse rounded-xl">
+                <input type="checkbox" class="peer" />
+                <div
+                    class="collapse-title bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <h1 class="text-3xl">Var, Let, and Const – What's the Difference?</h1>
+                </div>
+                <div
+                    class="collapse-content bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+
+                    <p>In JavaScript, users can declare a variable using 3 keywords that are var, let, and const. In
+                        this
+                        article, we will see the differences between the var, let, and const keywords. We will discuss
+                        the
+                        scope and other required concepts about each keyword.</p> <br>
+                    <p>
+                        <span class="text-xl font-semibold">var keyword in JavaScript:</span> The var is the oldest
+                        keyword to
+                        declare a variable in
+                        JavaScript.
+
+                        <span class="text-xl font-semibold">Scope:</span> Global scoped or function scoped. The scope of
+                        the var keyword is the global or function
+                        scope. It means variables defined outside the function can be accessed globally, and variables
+                        defined inside a particular function can be accessed within the function.
+                    </p>
+                    <br>
+                    <p><span class="text-xl font-semibold">let keyword in JavaScript:</span> The let keyword is an
+                        improved version of the var keyword.
+
+                        <span class="text-xl font-semibold">Scope:</span> block scoped: The scope of a let variable is
+                        only block scoped. It can’t be accessible
+                        outside the particular block ({block}). Let’s see the below example.
+                    </p>
+                    <br>
+                    <p><span class="text-xl font-semibold">const keyword in JavaScript:</span> The const keyword has all
+                        the properties that are the same as the
+                        let
+                        keyword, except the user cannot update it.
+
+                        <span class="text-xl font-semibold">Scope:</span> block scoped: When users declare a const
+                        variable, they need to initialize it, otherwise,
+                        it
+                        returns an error. The user cannot update the const variable once it is declared.
+                    </p>
+                </div>
+            </div>
+            <div class="collapse rounded-xl mt-5">
+                <input type="checkbox" class="peer" />
+                <div
+                    class="collapse-title bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <h1 class="text-3xl">Differences Between Arrow and Regular Functions.</h1>
+                </div>
+                <div
+                    class="collapse-content bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+
+                    <p> <b>1. Syntax:</b> The arrow function example above allows a developer to accomplish the same
+                        result with fewer lines of code and approximately half the typing.</p> <br>
+                    <p> <b>2. Arguments binding:</b> Arrow functions do not have an arguments binding. However, they
+                        have access to the arguments object of the closest non-arrow parent function. Named and rest
+                        parameters are heavily relied upon to capture the arguments passed to arrow functions.</p> <br>
+                    <p> <b>3. Use of this keyword</b> Unlike regular functions, arrow functions do not have their own
+                        this. The value of this inside an arrow function remains the same throughout the lifecycle of
+                        the function and is always bound to the value of this in the closest non-arrow parent function.
+                    </p> <br>
+                    <p> <b>4. Using new keyword</b> Regular functions created using function declarations or expressions
+                        are constructible and callable. Since regular functions are constructible, they can be called
+                        using the new keyword.
+                    </p> <br>
+                    <p> <b>5. No duplicate named parameters</b> Arrow functions can never have duplicate named
+                        parameters, whether in strict or non-strict mode.
+                    </p> <br>
+                </div>
+            </div>
+            <div class="collapse rounded-xl mt-5">
+                <input type="checkbox" class="peer" />
+                <div
+                    class="collapse-title bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <h1 class="text-3xl">Why should I use template string?</h1>
+                </div>
+                <div
+                    class="collapse-content bg-sky-900 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+
+                    <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
+                        insert/interpolate variables and expressions into strings without needing to concatenate like in
+                        older versions of JavaScript. It allows us to create strings that are complex and contain
+                        dynamic elements. Another great thing that comes with template strings are tags. Tags are
+                        functions that take a string and the decomposed parts of the string as parameters and are great
+                        for converting strings to different entities.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
