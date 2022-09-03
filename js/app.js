@@ -26,9 +26,13 @@ const showThisNews = category_id => {
         .then(res => res.json())
         .then(data => showNews(data.data))
         .catch(error => console.log(error))
+
+    const progress = document.getElementById("progress-bar");
+    progress.classList.remove('hidden')
 }
 const showNews = newses => {
     // console.log(newses);
+
     const newsContainer = document.getElementById("news-container");
     newsContainer.textContent = ``;
     const countNews = document.getElementById('news-count');
@@ -73,7 +77,10 @@ const showNews = newses => {
             </div>
         `;
         newsContainer.appendChild(div);
+
     });
+    const progress = document.getElementById("progress-bar");
+    progress.classList.add('hidden')
 }
 const loadModal = id => {
     fetch(`https://openapi.programming-hero.com/api/news/${id}`)
@@ -97,7 +104,7 @@ const displayModalBody = details => {
         <p>${author.published_date ? author.published_date : 'No Data Found'}</p>
         <p>View:${total_view ? total_view : 'No Data Found'}</p>
         </div>
-            <p class="py-4">${details.length > 350 ? details.slice(0, 350) + '...' : detail}</p>
+            <p class="py-4">${details.length > 350 ? details.slice(0, 350) + '...' : details}</p>
 
         `;
     })
