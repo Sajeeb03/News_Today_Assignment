@@ -31,6 +31,12 @@ const showNews = newses => {
     // console.log(newses);
     const newsContainer = document.getElementById("news-container");
     newsContainer.textContent = ``;
+    const countNews = document.getElementById('news-count');
+    countNews.innerHTML = `
+    <div class="w-4/5 m-auto bg-white rounded-lg text-2xl mb-5 p-3">
+        <h1>${newses.length} news in this category</h1>
+    </div>
+    `;
     newses.forEach(news => {
         // console.log(news)
         const { author, title, thumbnail_url, details, total_view, _id } = news;
@@ -97,4 +103,4 @@ const displayModalBody = details => {
     })
 }
 loadNewsCategories();
-showThisNews('02');
+// showThisNews('02');
