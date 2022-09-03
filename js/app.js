@@ -35,6 +35,7 @@ const showThisNews = category_id => {
 }
 //displaying part for all news categories 
 const showNews = allNews => {
+    // console.log(allNews)
     const newsContainer = document.getElementById("news-container");
     newsContainer.textContent = ``;
 
@@ -124,4 +125,4 @@ const displayModalBody = details => {
     })
 }
 loadNewsCategories();
-// showThisNews('08');
+showThisNews('08');
