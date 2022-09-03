@@ -7,6 +7,7 @@ const loadNewsCategories = () => {
 
 const displayNewsCategory = (categories) => {
     // console.log(categories);
+
     const categoriesContainer = document.getElementById("categories-container");
     categories.forEach(category => {
         // console.log(category.category_id)
@@ -30,19 +31,22 @@ const showThisNews = category_id => {
     const progress = document.getElementById("progress-bar");
     progress.classList.remove('hidden')
 }
-const showNews = newses => {
-    // console.log(newses);
-
+const showNews = allNews => {
     const newsContainer = document.getElementById("news-container");
     newsContainer.textContent = ``;
     const countNews = document.getElementById('news-count');
     countNews.innerHTML = `
     <div class="w-4/5 m-auto bg-white rounded-lg text-2xl mb-5 p-3">
-        <h1>${newses.length} news in this category</h1>
+        <h1>${allNews.length} news in this category</h1>
     </div>
     `;
-    newses.forEach(news => {
-        // console.log(news)
+    allNews.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+    // console.log(allNews)
+
+    allNews.forEach(news => {
+
         const { author, title, thumbnail_url, details, total_view, _id } = news;
         const div = document.createElement('div');
         div.classList.add('mb-5')
@@ -82,6 +86,7 @@ const showNews = newses => {
         newsContainer.appendChild(div);
 
     });
+
     const progress = document.getElementById("progress-bar");
     progress.classList.add('hidden')
 }
@@ -113,4 +118,4 @@ const displayModalBody = details => {
     })
 }
 loadNewsCategories();
-// showThisNews('02');
+// showThisNews('08');
