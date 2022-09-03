@@ -1,13 +1,14 @@
+// loading all data from api 
+
 const loadNewsCategories = () => {
     fetch(`https://openapi.programming-hero.com/api/news/categories`)
         .then(res => res.json())
         .then(data => displayNewsCategory(data.data.news_category))
         .catch(error => console.log(error))
 }
+// displaying data to ta list 
 
 const displayNewsCategory = (categories) => {
-    // console.log(categories);
-
     const categoriesContainer = document.getElementById("categories-container");
     categories.forEach(category => {
         // console.log(category.category_id)
@@ -21,32 +22,37 @@ const displayNewsCategory = (categories) => {
     });
 }
 
+// loading data with id 
 const showThisNews = category_id => {
     // console.log(category_id)
     fetch(`https://openapi.programming-hero.com/api/news/category/${category_id}`)
         .then(res => res.json())
         .then(data => showNews(data.data))
         .catch(error => console.log(error))
-
+    //start moving the spinner / progress bar 
     const progress = document.getElementById("progress-bar");
     progress.classList.remove('hidden')
 }
+//displaying part for all news categories 
 const showNews = allNews => {
     const newsContainer = document.getElementById("news-container");
     newsContainer.textContent = ``;
+
+    //counting the number of news 
     const countNews = document.getElementById('news-count');
     countNews.innerHTML = `
     <div class="w-4/5 m-auto bg-white rounded-lg text-2xl mb-5 p-3">
         <h1>${allNews.length} news in this category</h1>
     </div>
     `;
+    // sorting data according to number of views
     allNews.sort((a, b) => {
         return b.total_view - a.total_view;
     });
     // console.log(allNews)
 
     allNews.forEach(news => {
-
+        // destructuring 
         const { author, title, thumbnail_url, details, total_view, _id } = news;
         const div = document.createElement('div');
         div.classList.add('mb-5')
