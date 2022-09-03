@@ -110,4 +110,4 @@ const displayModalBody = details => {
     })
 }
 loadNewsCategories();
-showThisNews('02');
+// showThisNews('02');

@@ -11,9 +11,9 @@
 
 </head>
 
-<body>
+<body class="">
     <header class="mb-5">
-        <div class="navbar bg-white">
+        <div class="navbar bg-white w-full ">
             <div class="flex-1">
                 <a class="btn btn-ghost normal-case text-xl">NEWS <kbd
                         class="kbd kbd-lg bg-orange-500 ml-3">TODAY</kbd></a>
@@ -29,16 +29,15 @@
         </div>
     </header>
     <main>
-        <section class="mb-5">
-            <ul id="categories-container"
-                class="flex justify-evenly menu menu-horizontal lg:menu-horizontal bg-white rounded-box w-full">
+        <section class="mb-5 w-4/5 m-auto lg:w-full">
+            <ul id="categories-container" class="bg-white flex flex-col rounded-xl p-5 lg:flex-row justify-evenly">
             </ul>
         </section>
         <progress id="progress-bar" class="progress w-full hidden"></progress>
         <section id="news-count">
 
         </section>
-        <section id="news-container" class="w-4/5 m-auto">
+        <section id="news-container" class="w-full lg:w-4/5 m-auto">
 
 
         </section>
